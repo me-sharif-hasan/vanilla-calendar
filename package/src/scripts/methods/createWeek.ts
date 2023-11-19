@@ -7,9 +7,14 @@ const createWeek = (self: IVanillaCalendar) => {
 	const weekEls = (self.HTMLElement as HTMLElement).querySelectorAll(`.${self.CSSClasses.week}`) as NodeListOf<HTMLElement>;
 	const templateWeekDayEl = document.createElement('b');
 	templateWeekDayEl.className = self.CSSClasses.weekDay;
-
 	if (self.settings.iso8601) weekday.push((weekday.shift() as string));
-
+	weekday[0] = 'Sat';
+	weekday[1] = 'Sun';
+	weekday[2] = 'Mon';
+	weekday[3] = 'Tue';
+	weekday[4] = 'Wed';
+	weekday[5] = 'Thu';
+	weekday[6] = 'Fri';
 	weekEls.forEach((weekEl) => {
 		weekEl.innerHTML = '';
 
